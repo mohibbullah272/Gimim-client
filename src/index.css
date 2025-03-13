@@ -8,7 +8,20 @@ body{
     font-family: "Poppins", serif;
     padding: 0;
     margin: 0;
-    background-color:#f6f7f6 ;
+    background-color:#ECF8F3;
+}
+
+.primary{
+  background-color: #3EB489;
+}
+.secondary{
+  background-color:#65C3A1 ;
+}
+.accent{
+  background-color: #8BD2B8;
+}
+.card{
+  background-color: #C5E8DC;
 }
 
 h1, h2, h3 {
@@ -17,9 +30,26 @@ h1, h2, h3 {
   }
 
 /* 
-background color : #f6f7f6
-text: #060706
-primary color: #709880
-secondary color : #afcdbb 
-accent color : #83bb99
+
 */
+/* {
+  color: #ECF8F3;
+  color: #C5E8DC;
+  color: #B2E1D0;
+  color: #8BD2B8;
+  color: #65C3A1;
+  color: #3EB489;
+} */
+/* Color Role Assignments:
+Primary Color: #3EB489 (A bold green that stands out for buttons, CTAs, and key highlights)
+Secondary Color: #65C3A1 (A lighter complement for hover effects, secondary buttons, or minor highlights)
+Background Color: #ECF8F3 (A soft, clean background that makes content easy to read)
+Card / Section Background: #C5E8DC (A slight contrast for sections or cards)
+Accent Color: #8BD2B8 (For subtle highlights like icons, borders, or progress bars)
+Text Color: Dark gray or deep green for good readability against light backgrounds
+Where to Use These Colors?
+Navbar & CTA Buttons: #3EB489 (strong & engaging)
+Hover Effects: #65C3A1 (a nice, smooth transition)
+Page Background: #ECF8F3 (keeping it fresh & clean)
+Cards & Sections: #C5E8DC (to separate content areas without being too harsh)
+Accent Elements: #8BD2B8 (like underlines, borders, or small decorative elements) */
