@@ -1,19 +1,28 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { IoMdHome } from "react-icons/io";
 import { FaBoxes } from "react-icons/fa";
 import { MdInfo } from "react-icons/md";
 import { FaHeadset } from "react-icons/fa6";
+import { AuthContext } from '@/AuthProvider/AuthProvider';
+import userIcon from '../assets/user-icon.png'
 const Navbar = () => {
-    const user = true
+  const {user,logout}=useContext(AuthContext)
+  const handleLogout=()=>{
+    logout()
+    .then(res=>{
+      console.log(`user logout `)
+    })
+  }
+   
 const links=<>
-<NavLink><span className='flex items-center gap-2 p-2'> <IoMdHome />Home</span></NavLink>
-<NavLink><span className='flex items-center gap-2 p-2 '> <FaBoxes />All Product</span></NavLink>
-<NavLink><span className='flex items-center gap-2 p-2  '><MdInfo />About Us</span></NavLink>
-<NavLink><span className='flex items-center gap-2 p-2'> <FaHeadset />Contact</span></NavLink>
+<NavLink to={'/'}><span className='flex items-center gap-2 hover:text-[#65C3A1]    p-2'> <IoMdHome className='text-xl'/>Home</span></NavLink>
+<NavLink to={'/allProduct'}><span className='flex items-center gap-2 hover:text-[#65C3A1]  p-2 '> <FaBoxes className='text-xl'/>All Product</span></NavLink>
+<NavLink to={'/aboutUs'}><span className='flex items-center gap-2 hover:text-[#65C3A1]  p-2  '><MdInfo className='text-xl'/>About Us</span></NavLink>
+<NavLink to={'/contact'}><span className='flex items-center gap-2 hover:text-[#65C3A1]  p-2'> <FaHeadset className='text-xl'/>Contact</span></NavLink>
 </>
     return (
-        <div className="navbar shadow-sm">
+        <div className="navbar max-w-7xl mx-auto  shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,13 +30,13 @@ const links=<>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content card rounded-box z-1 mt-3 w-52 p-2 shadow">
              {
                 links
              }
             </ul>
           </div>
-          <a className="text-green-950 text-xl">GIMIM Corporation </a>
+          <a className="text-green-950 nav-title text-xl">GIMIM Corporation </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -42,8 +51,8 @@ const links=<>
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     <img
-                      alt="Tailwind CSS Navbar component"
-                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                      alt="user avatar"
+                      src={user?user.photoURL:userIcon} />
                   </div>
                 </div>
                 <ul
@@ -51,9 +60,9 @@ const links=<>
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                 
                   <li><a>Settings</a></li>
-                  <li><a>Logout</a></li>
+                  <li><a onClick={handleLogout}> Logout</a></li>
                 </ul>
-              </div>:     <a className="btn glass primary">Login</a>
+              </div>:     <Link to={'/login'}><button className="btn glass primary">Login</button></Link>
             }
      
         </div>
