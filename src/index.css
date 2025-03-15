@@ -10,6 +10,7 @@ body{
     padding: 0;
     margin: 0;
     background-color:#ECF8F3;
+    overflow-x: hidden;
 }
 .nav-title{
   font-family: "Lobster", sans-serif;
@@ -34,6 +35,10 @@ h1, h2, h3 {
 a.active{
   color: white;
 }
+
+
+
+
 /* 
 
 */
