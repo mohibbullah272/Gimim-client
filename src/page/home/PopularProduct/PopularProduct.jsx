@@ -8,10 +8,10 @@ import img6 from '../../../assets/product6.png'
 const PopularProduct = () => {
     return (
         <div className='max-w-7xl mx-auto  my-20'>
-            <h3 className="text-3xl  text-center text-gray-800 mb-10">Most Popular Products</h3>
+            <h3 className="text-3xl  text-center text-gray-800 mb-10">~Popular Products~</h3>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 place-items-center">
   {[img1, img2, img3, img4, img5, img6].map((img, index) => (
-    <div key={index} className="w-64 h-64 flex items-center justify-center rounded-full secondary p-2">
+    <div key={index} className="w-64 h-64 flex items-center justify-center rounded-full  p-2">
       <img className="rounded-full w-full h-full object-cover" src={img} alt={`Image ${index + 1}`} />
     </div>
   ))}

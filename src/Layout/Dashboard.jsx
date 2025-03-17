@@ -4,7 +4,21 @@ import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
+const admin = true 
+const links = <div>
+{
+  admin?<div>
 
+
+
+  </div>:
+  <div>
+
+
+  </div>
+}
+
+</div>
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -41,7 +55,7 @@ const Dashboard = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
+ 
       <section className="col-span-12 lg:col-span-9 p-10">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eius nobis repellat iusto earum delectus, esse eveniet soluta nihil sunt blanditiis repellendus cum hic adipisci repudiandae! 
