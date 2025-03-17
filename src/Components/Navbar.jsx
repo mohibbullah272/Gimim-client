@@ -16,13 +16,13 @@ const Navbar = () => {
   }
    
 const links=<>
-<NavLink to={'/'}><span className='flex items-center gap-2 hover:text-[#65C3A1]    p-2'> <IoMdHome className='text-xl'/>Home</span></NavLink>
-<NavLink to={'/allProduct'}><span className='flex items-center gap-2 hover:text-[#65C3A1]  p-2 '> <FaBoxes className='text-xl'/>All Product</span></NavLink>
-<NavLink to={'/aboutUs'}><span className='flex items-center gap-2 hover:text-[#65C3A1]  p-2  '><MdInfo className='text-xl'/>About Us</span></NavLink>
-<NavLink to={'/contact'}><span className='flex items-center gap-2 hover:text-[#65C3A1]  p-2'> <FaHeadset className='text-xl'/>Contact</span></NavLink>
+<NavLink to={'/'}><span className='flex items-center gap-2 hover:text-[#a07032b4]    p-2'> <IoMdHome className='text-xl'/>Home</span></NavLink>
+<NavLink to={'/allProduct'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2 '> <FaBoxes className='text-xl'/>All Product</span></NavLink>
+<NavLink to={'/aboutUs'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2  '><MdInfo className='text-xl'/>About Us</span></NavLink>
+<NavLink to={'/contact'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <FaHeadset className='text-xl'/>Contact</span></NavLink>
 </>
     return (
-        <div className="navbar max-w-7xl mx-auto  shadow-sm">
+        <div className="navbar  max-w-7xl mx-auto  shadow-xl">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,7 +59,7 @@ const links=<>
                   tabIndex={0}
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                 
-                  <li><a>Settings</a></li>
+                  <li><Link to={'/dashboard'}>Dashboard</Link></li>
                   <li><a onClick={handleLogout}> Logout</a></li>
                 </ul>
               </div>:     <Link to={'/login'}><button className="btn glass primary">Login</button></Link>

@@ -32,8 +32,8 @@ loginWithEmail(email,password)
         }}>
             <div  className='flex md:flex-row flex-col justify-between md:gap-24 gap-10 md:p-10 items-center'>
 <div>
-<h3 className='text-3xl text-green-950 text-center'>Stick With Us – Log In Now!</h3>
-<p className='text-green-600 italic text-center'>Your trusted source for industrial-strength adhesives.</p>
+<h3 className='text-3xl  text-center'>Stick With Us – Log In Now!</h3>
+<p className=' italic text-center'>Your trusted source for industrial-strength adhesives.</p>
 </div>
 
 

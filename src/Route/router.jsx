@@ -1,3 +1,4 @@
+import Dashboard from "@/Layout/Dashboard";
 import Main from "@/Layout/Main";
 import AboutUs from "@/page/AboutUs/AboutUs";
 import AllProduct from "@/page/AllProduct/AllProduct";
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
                 path:'/signup',
                 element:<Signup></Signup>
             }
+        ])
+    },
+    // dashboard
+    {
+        path:'/dashboard',
+        element:<Dashboard></Dashboard>,
+        children:([
+            
         ])
     }
 ])

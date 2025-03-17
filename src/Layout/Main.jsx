@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const Main = () => {
     return (
         <div>
-        <header className="bg-[#3EB489]">
+        <header className="primary">
             <Navbar></Navbar>
         </header>
       <main>
