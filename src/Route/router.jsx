@@ -3,6 +3,8 @@ import Main from "@/Layout/Main";
 import AboutUs from "@/page/AboutUs/AboutUs";
 import AllProduct from "@/page/AllProduct/AllProduct";
 import Contact from "@/page/Contact/Contact";
+import AdminOverview from "@/page/Dashboard/AdminOverview";
+import UserProfile from "@/page/Dashboard/UserProfile";
 import Details from "@/page/ItemDetails/Details";
 import Login from "@/page/Login/Login";
 import Signup from "@/page/Signup/Signup";
@@ -53,7 +55,15 @@ const router = createBrowserRouter([
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
         children:([
-            
+            {
+                path:'profile',
+                element:<UserProfile></UserProfile>
+            },
+            // admins only 
+            {
+                path:'overview',
+                element:<AdminOverview></AdminOverview>
+            }
         ])
     }
 ])

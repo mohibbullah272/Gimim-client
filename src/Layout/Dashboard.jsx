@@ -1,19 +1,28 @@
+
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
 const admin = true 
 const links = <div>
 {
-  admin?<div>
+  admin?  <div className="flex flex-col mt-5 space-y-2">
+     
+  <NavLink to="/" className="p-2 rounded hover:bg-gray-700">Home</NavLink>
+  <NavLink to="/dashboard" className="p-2 rounded hover:bg-gray-700">Dashboard</NavLink>
+  <NavLink to="/dashboard/overview" className="p-2 rounded hover:bg-gray-700">Overview</NavLink>
 
 
 
-  </div>:
-  <div>
-
+</div>:
+  <div className="flex flex-col mt-5 space-y-2">
+     
+          <NavLink to="/" className="p-2 rounded hover:bg-gray-700">Home</NavLink>
+          <NavLink to="/dashboard" className="p-2 rounded hover:bg-gray-700">Dashboard</NavLink>
+          <NavLink to="/dashboard/profile" className="p-2 rounded hover:bg-gray-700">Profile</NavLink>
+  
 
   </div>
 }
@@ -47,19 +56,12 @@ const links = <div>
         transition-all duration-300`}
         onClick={closeMenu}
       >
-        <div className="flex flex-col mt-5 space-y-2">
-          <NavLink to="/" className="p-2 rounded hover:bg-gray-700">Home</NavLink>
-          <NavLink to="/dashboard" className="p-2 rounded hover:bg-gray-700">Dashboard</NavLink>
-          <NavLink to="/settings" className="p-2 rounded hover:bg-gray-700">Settings</NavLink>
-          <NavLink to="/profile" className="p-2 rounded hover:bg-gray-700">Profile</NavLink>
-        </div>
+{links}
       </aside>
 
  
       <section className="col-span-12 lg:col-span-9 p-10">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eius nobis repellat iusto earum delectus, esse eveniet soluta nihil sunt blanditiis repellendus cum hic adipisci repudiandae! 
-        </p>
+     <Outlet></Outlet>
       </section>
     </div>
   );
