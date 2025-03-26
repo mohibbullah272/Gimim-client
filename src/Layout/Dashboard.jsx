@@ -6,28 +6,149 @@ import { NavLink, Outlet } from "react-router-dom";
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
 const admin = true 
+const linkStyles = {
+  default: "p-2 rounded hover:bg-gray-700 transition-colors duration-200",
+  active: "bg-gray-800 text-white font-semibold"
+};
 const links = <div>
-{
-  admin?  <div className="flex flex-col mt-5 space-y-2">
-     
-  <NavLink to="/" className="p-2 rounded hover:bg-gray-700">Home</NavLink>
-  <NavLink to="/dashboard" className="p-2 rounded hover:bg-gray-700">Dashboard</NavLink>
-  <NavLink to="/dashboard/overview" className="p-2 rounded hover:bg-gray-700">Overview</NavLink>
-
-
-
-</div>:
+{admin ? (
   <div className="flex flex-col mt-5 space-y-2">
-     
-          <NavLink to="/" className="p-2 rounded hover:bg-gray-700">Home</NavLink>
-          <NavLink to="/dashboard" className="p-2 rounded hover:bg-gray-700">Dashboard</NavLink>
-          <NavLink to="/dashboard/profile" className="p-2 rounded hover:bg-gray-700">Profile</NavLink>
-  
-
+    <NavLink 
+      to="/" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Home
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Dashboard
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard/user" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Users
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard/addProduct" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Add Product
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard/manage-product" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Manage Product
+    </NavLink>
+    
+    <div className="divider my-2 text-gray-500">~~~</div>
+    
+    <NavLink 
+      to="/privacyPolicy" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Privacy Policy
+    </NavLink>
+    
+    <NavLink 
+      to="/termsOfService" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Terms of Service
+    </NavLink>
   </div>
-}
-
+) : (
+  <div className="flex flex-col mt-5 space-y-2">
+    <NavLink 
+      to="/" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Home
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Dashboard
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard/profile" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Profile
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard/cart" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      My Cart
+    </NavLink>
+    
+    <NavLink 
+      to="/dashboard/orders" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Orders
+    </NavLink>
+    
+    <div className="divider my-2 text-gray-500">~~~</div>
+    
+    <NavLink 
+      to="/privacyPolicy" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Privacy Policy
+    </NavLink>
+    
+    <NavLink 
+      to="/termsOfService" 
+      className={({ isActive }) => 
+        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
+      }
+    >
+      Terms of Service
+    </NavLink>
+  </div>
+)}
 </div>
+
+
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -60,7 +181,7 @@ const links = <div>
       </aside>
 
  
-      <section className="col-span-12 lg:col-span-9 p-10">
+      <section className="col-span-12 lg:col-span-9 ">
      <Outlet></Outlet>
       </section>
     </div>

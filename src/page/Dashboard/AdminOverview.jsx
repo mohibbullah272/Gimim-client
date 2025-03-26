@@ -308,31 +308,7 @@ const AdminOverview = () => {
             </div>
 
             {/* Inventory Alerts */}
-            <div className="bg-white rounded-lg shadow">
-              <div className="px-6 py-4 border-b border-gray-200 flex items-center">
-                <AlertCircle className="h-5 w-5 text-red-500 mr-2" />
-                <h3 className="text-lg font-medium text-gray-800">Inventory Alerts</h3>
-              </div>
-              <div className="divide-y divide-gray-200">
-                {inventoryAlerts.map((item) => (
-                  <div key={item.product} className="px-6 py-4 flex justify-between items-center">
-                    <div>
-                      <p className="font-medium text-gray-800">{item.product}</p>
-                      <p className="text-sm text-red-500">Low stock alert</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-medium text-gray-800">{item.stock} units left</p>
-                      <p className="text-sm text-gray-500">Threshold: {item.threshold}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                <button className="text-yellow-500 hover:text-yellow-600 font-medium flex items-center">
-                  View All Alerts <ChevronRight className="h-4 w-4 ml-1" />
-                </button>
-              </div>
-            </div>
+       
           </div>
         </div>
       </main>
