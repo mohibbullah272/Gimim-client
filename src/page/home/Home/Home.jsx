@@ -8,6 +8,7 @@ import OurValue from '../OurValue/OurValue';
 import WhyChose from '../WhyChose/WhyChose';
 import MeetOurTeam from '../MeetOurTeam/MeetOurTeam';
 import FacebookVideo from '../Video/FacebookVideo';
+import ChatBot from '@/page/Chatbot/Chatbot';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <OurStory></OurStory>
       <FacebookVideo></FacebookVideo>
       <OurValue></OurValue>
+      <ChatBot></ChatBot>
       <OurExpertise></OurExpertise>
       <WhyChose></WhyChose>
         </div>
