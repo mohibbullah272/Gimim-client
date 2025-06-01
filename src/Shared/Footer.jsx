@@ -1,24 +1,18 @@
 import React from 'react';
 import { Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import footerImg from '../assets/footer_logo.png'
 
 export default function Footer() {
   return (
     <footer className="bg-black  py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
-          {/* Company Logo & Info */}
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center mb-4">
-              <div className="bg-blue-600 p-3 rounded-lg mr-3">
-                <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">G</span>
-                </div>
+              <div className=" rounded-lg mr-3">
+                 <img src={footerImg} alt="" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">GIMIM</h3>
-                <p className="text-sm text-gray-300">CORPORATION</p>
-              </div>
+         
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Importer and wholesaler of premium products with unmatched quality and service
@@ -58,19 +52,17 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone className="w-4 h-4 text-blue-400 mr-3" />
-                <span className="text-gray-300 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-300 text-sm">+8801915651053</span>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-4 h-4 text-blue-400 mr-3" />
-                <span className="text-gray-300 text-sm">info@gimim.com</span>
-              </div>
+         
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 text-blue-400 mr-3 mt-1" />
                 <span className="text-gray-300 text-sm">
-                  123 Business Street<br />
-                  Commerce City, CC 12345
+                  689, West Ibrahimpur<br />
+               Kafrul Dhaka-1216,Bangladesh
                 </span>
               </div>
+              
             </div>
           </div>
 
