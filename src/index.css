@@ -36,7 +36,54 @@ h1, h2, h3 {
 a.active{
   color: white;
 }
+.toast-container {
+  z-index: 9999;
+}
 
+/* Toast animations */
+.toast-animate {
+  animation: toast-slide-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes toast-slide-in {
+  0% {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Toast exit animation handled automatically by react-hot-toast */
+@keyframes toast-slide-out {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Add pulse effect for important notifications */
+.toast-pulse {
+  animation: toast-pulse 1.5s infinite;
+}
+
+@keyframes toast-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
 
 
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { IoMdHome } from "react-icons/io";
+import { IoMdDocument, IoMdHome } from "react-icons/io";
 import { FaBoxes } from "react-icons/fa";
 import { MdInfo } from "react-icons/md";
 import { FaHeadset } from "react-icons/fa6";
@@ -18,8 +18,8 @@ const Navbar = () => {
 const links=<>
 <NavLink to={'/'}><span className='flex items-center gap-2 hover:text-[#a07032b4]    p-2'> <IoMdHome className='text-xl'/>Home</span></NavLink>
 <NavLink to={'/allProduct'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2 '> <FaBoxes className='text-xl'/>All Product</span></NavLink>
-<NavLink to={'/aboutUs'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2  '><MdInfo className='text-xl'/>About Us</span></NavLink>
 <NavLink to={'/contact'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <FaHeadset className='text-xl'/>Contact</span></NavLink>
+<NavLink to={'/privacyPolicy'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <IoMdDocument />Privacy Policy</span></NavLink>
 </>
     return (
         <div className="navbar  max-w-7xl mx-auto  shadow-xl">
@@ -36,7 +36,7 @@ const links=<>
              }
             </ul>
           </div>
-          <a className="text-green-950 nav-title text-xl">GIMIM Corporation </a>
+        <Link to={'/'}>  <a className="text-green-950  text-xl">GIMIM Corporation </a></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

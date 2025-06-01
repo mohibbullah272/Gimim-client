@@ -1,5 +1,6 @@
 
 import LoadingScreen from "@/page/LoadingScreen/LoadingScreen";
+import Footer from "@/Shared/Footer";
 import { Suspense, lazy } from "react";
 import { Outlet } from "react-router-dom";
 const Navbar =lazy(()=>import('../Components/Navbar'))
@@ -20,7 +21,7 @@ const Main = () => {
        </Suspense>
       </main>
       <footer>
-
+<Footer></Footer>
       </footer>
         </div>
     );

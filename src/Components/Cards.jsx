@@ -1,22 +1,54 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import img1 from '../assets/product2.png'
-import tkIcon from '../assets/taka.png'
-const Cards = () => {
+import { motion } from 'framer-motion';
+import tkIcon from '../assets/taka.png';
+import './Cards.css';
+
+const Cards = ({ product }) => {
+    const { _id, productName, price, image, description } = product || {};
+    
     return (
-        <div className='bg-white/50 shadow rounded-2xl p-3 '>
-            <img src={img1} alt="" />
-          <div className='p-2'>
-          <h3>Super Glue </h3>
-          <p className='flex items-center gap-2'><img className='w-4' src={tkIcon} alt="taka-icon" />500</p>
-          <div className='flex justify-end'>
-    <Link to={'/details/1'}>
-    <button className='btn primary '>
-                View Details
-            </button>
-    </Link>
-          </div>
-          </div>
-        </div>
+        <motion.div 
+            className="card-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileHover={{ 
+                scale: 1.03,
+                boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)"
+            }}
+            transition={{ duration: 0.3 }}
+        >
+            <div className="card-white">
+                <div className="card-image-container">
+                    <img src={image} alt={productName} className="card-image" />
+                
+                </div>
+                
+                <div className="card-content">
+                    <h3 className="card-title">{productName}</h3>
+                    
+                    {description && (
+                        <p className="card-description">
+                            {description.length > 100 
+                                ? `${description.substring(0, 100)}...` 
+                                : description}
+                        </p>
+                    )}
+                    
+                    <div className="card-actions">
+                        <Link to={`/details/${_id}`} className="card-button-link">
+                            <motion.button 
+                                className="card-button"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                View Details
+                            </motion.button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
     );
 };
 

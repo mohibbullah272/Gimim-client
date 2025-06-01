@@ -1,11 +1,11 @@
 
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
-const admin = true 
+const admin = true
 const linkStyles = {
   default: "p-2 rounded hover:bg-gray-700 transition-colors duration-200",
   active: "bg-gray-800 text-white font-semibold"
@@ -13,14 +13,7 @@ const linkStyles = {
 const links = <div>
 {admin ? (
   <div className="flex flex-col mt-5 space-y-2">
-    <NavLink 
-      to="/" 
-      className={({ isActive }) => 
-        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
-      }
-    >
-      Home
-    </NavLink>
+
     
     <NavLink 
       to="/dashboard" 
@@ -80,23 +73,9 @@ const links = <div>
   </div>
 ) : (
   <div className="flex flex-col mt-5 space-y-2">
-    <NavLink 
-      to="/" 
-      className={({ isActive }) => 
-        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
-      }
-    >
-      Home
-    </NavLink>
+
     
-    <NavLink 
-      to="/dashboard" 
-      className={({ isActive }) => 
-        `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
-      }
-    >
-      Dashboard
-    </NavLink>
+ 
     
     <NavLink 
       to="/dashboard/profile" 
@@ -177,6 +156,9 @@ const links = <div>
         transition-all duration-300`}
         onClick={closeMenu}
       >
+    <Link to={'/'}>
+    <h3 className="text-center text-xl hover:text-gray-100">GIMIM CORPORATION</h3>
+    </Link>
 {links}
       </aside>
 

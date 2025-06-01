@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 // Product Schema Validation
 const productSchema = z.object({
@@ -19,6 +21,7 @@ const AddProductPage = () => {
     register, 
     handleSubmit, 
     setValue, 
+    reset,
     formState: { errors } 
   } = useForm({
     resolver: zodResolver(productSchema)
@@ -48,9 +51,20 @@ const AddProductPage = () => {
     }
   };
 
-  const onSubmit = (data) => {
-    console.log('Product Data:', data);
-    // Here you would typically send the data to your backend
+  const onSubmit =async (data) => {
+  const {data:uploadInfo}= await axios.post(`https://gimim-server.vercel.app/products`,data)
+  console.log(uploadInfo)
+  if(uploadInfo.insertedId){
+    toast.success('Product Uploaded successfully!', {
+      className: 'toast-animate toast-pulse',
+      // Other options
+    });
+    reset()
+    setImagePreview(null)
+  }else{
+    toast.error('something went wrong try again later')
+  }
+
   };
 
   return (

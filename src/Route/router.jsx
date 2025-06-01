@@ -1,6 +1,5 @@
 import Dashboard from "@/Layout/Dashboard";
 import Main from "@/Layout/Main";
-import AboutUs from "@/page/AboutUs/AboutUs";
 import AddProductPage from "@/page/AddProductPage/AddProductPage";
 import AllProduct from "@/page/AllProduct/AllProduct";
 import Contact from "@/page/Contact/Contact";
@@ -11,7 +10,9 @@ import Login from "@/page/Login/Login";
 import PrivacyPolicy from "@/page/PrivacyPolicy/PrivacyPolicy";
 import Signup from "@/page/Signup/Signup";
 import TermsOfService from "@/page/TermsOfService/TermsOfService";
+import UserManagementTable from "@/page/UserManagementTable/UserManagementTable";
 import Home from "@/page/home/Home/Home";
+
 import {
     createBrowserRouter,
  
@@ -31,10 +32,7 @@ const router = createBrowserRouter([
                 path:'/allProduct',
                 element:<AllProduct></AllProduct>
             },
-            {
-                path:'/aboutUs',
-                element:<AboutUs></AboutUs>
-            },
+       
             {
                 path:'/contact',
                 element:<Contact></Contact>
@@ -49,7 +47,9 @@ const router = createBrowserRouter([
             },
             {
                 path:'/details/:id',
-                element:<Details></Details>
+                element:<Details></Details>,
+              
+                
             },
             {
                 path:'/privacyPolicy',
@@ -78,6 +78,10 @@ const router = createBrowserRouter([
             {
                 path:'addProduct',
                 element:<AddProductPage></AddProductPage>
+            },
+            {
+                path:'user',
+                element:<UserManagementTable></UserManagementTable>
             }
         ])
     }
