@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import signupBanner from '../../assets/login-bg.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleLogin from '@/Shared/GoogleLogin';
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form"
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 const Signup = () => {
 const [showPass,setShowPass]=useState(false)
+const navigate = useNavigate()
 const {
     register,
     handleSubmit,
@@ -25,7 +26,8 @@ const {
     })
     updateUser(name)
     .then(res=>{
-        console.log('user update ')
+      navigate('/')
+
     })
 
   }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import loginBg from '../../assets/login-bg.png'
 import GoogleLogin from '@/Shared/GoogleLogin';
 import { useContext, useState } from 'react';
@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 const Login = () => {
     const [showPass,setShowPass]=useState(false)
+    const navigate = useNavigate()
   const { loginWithEmail}=useContext(AuthContext)
     const {
         register,
@@ -21,12 +22,13 @@ const Login = () => {
 loginWithEmail(email,password)
 .then(result=>{
     console.log(result.user)
+    navigate('/')
 })
       }
 
     return (
         <div className='min-h-screen mt-20 max-w-7xl mx-auto' style={{backgroundImage:`url(${loginBg})`,
-        backgroundPosition:'center',
+        backgroundPosition:'center', 
         backgroundRepeat:'no-repeat',
         backgroundSize:'center'
         }}>

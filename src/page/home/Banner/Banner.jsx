@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useCheckAdmin from '@/Shared/useCheckAdmin';
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   // Sample product images - replace these with actual product images
   const products = [
     {

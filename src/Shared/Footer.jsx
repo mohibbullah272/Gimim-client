@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
 import footerImg from '../assets/footer_logo.png'
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -29,19 +30,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/products" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
+                <Link to="/allProduct" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Products
-                </a>
+                </Link>
               </li>
+      
               <li>
-                <a href="/about" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
+                <Link to="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,19 +68,22 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-white">Follow Us</h4>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/gimimcorporation"
+                target='_blank' 
                 className="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition-colors duration-200 group"
               >
                 <Facebook className="w-5 h-5 text-gray-300 group-hover:text-white" />
               </a>
               <a 
-                href="#" 
+                href="https://wa.me/8801915651053?
+                text=Hi%20there!%20I'm%20interested%20in%20your%20service."
+                target='_blank'
                 className="bg-gray-800 p-3 rounded-lg hover:bg-green-600 transition-colors duration-200 group"
               >
                 <MessageCircle className="w-5 h-5 text-gray-300 group-hover:text-white" />
               </a>
               <a 
-                href="mailto:info@gimim.com" 
+                href="gimimcorporationbd@gmail.com" 
                 className="bg-gray-800 p-3 rounded-lg hover:bg-red-600 transition-colors duration-200 group"
               >
                 <Mail className="w-5 h-5 text-gray-300 group-hover:text-white" />

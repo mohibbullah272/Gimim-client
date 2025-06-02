@@ -8,10 +8,9 @@ const FacebookVideo = () => {
             style={{ border: 'none', overflow: 'hidden'}}
             height="476" 
             scrolling="no" 
-            frameborder="0"
-            allowfullscreen="true"
+            frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
-            allowFullScreen="true"
+            allowFullScreen={true}
             ></iframe>
         </div>
     );

@@ -16,7 +16,7 @@ const links = <div>
 
     
     <NavLink 
-      to="/dashboard" 
+      to="/dashboard/overview" 
       className={({ isActive }) => 
         `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
       }
@@ -43,7 +43,7 @@ const links = <div>
     </NavLink>
     
     <NavLink 
-      to="/dashboard/manage-product" 
+      to="/dashboard/manageProduct" 
       className={({ isActive }) => 
         `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
       }

@@ -9,8 +9,6 @@ import toast from 'react-hot-toast';
 const productSchema = z.object({
   productName: z.string().min(3, "Product name must be at least 3 characters"),
   description: z.string().min(10, "Description must be at least 10 characters"),
-  price: z.number().min(0, "Price must be a positive number"),
-  rating: z.number().min(0).max(5, "Rating must be between 0 and 5"),
   image: z.string().url("Valid image URL is required")
 });
 
@@ -28,6 +26,7 @@ const AddProductPage = () => {
   });
 
   const handleImageUpload = async (event) => {
+    console.log('function trigger1')
     const file = event.target.files[0];
     if (!file) return;
 
@@ -52,6 +51,7 @@ const AddProductPage = () => {
   };
 
   const onSubmit =async (data) => {
+    console.log('function trigger2')
   const {data:uploadInfo}= await axios.post(`https://gimim-server.vercel.app/products`,data)
   console.log(uploadInfo)
   if(uploadInfo.insertedId){
@@ -113,44 +113,7 @@ const AddProductPage = () => {
             )}
           </div>
 
-          {/* Price */}
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">
-                Price (BDT)
-              </label>
-              <input
-                type="number"
-                {...register('price', { valueAsNumber: true })}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFB941]"
-                placeholder="Product price"
-              />
-              {errors.price && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.price.message}
-                </p>
-              )}
-            </div>
 
-            {/* Rating */}
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">
-                Product Rating
-              </label>
-              <input
-                type="number"
-                step="0.1"
-                {...register('rating', { valueAsNumber: true })}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFB941]"
-                placeholder="Rate product (0-5)"
-              />
-              {errors.rating && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.rating.message}
-                </p>
-              )}
-            </div>
-          </div>
 
           {/* Image Upload */}
           <div>

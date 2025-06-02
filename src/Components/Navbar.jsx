@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { IoMdDocument, IoMdHome } from "react-icons/io";
 import { FaBoxes } from "react-icons/fa";
-import { MdInfo } from "react-icons/md";
 import { FaHeadset } from "react-icons/fa6";
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 import userIcon from '../assets/user-icon.png'
+import useCheckAdmin from '@/Shared/useCheckAdmin';
 const Navbar = () => {
   const {user,logout}=useContext(AuthContext)
+
+  const [isAdmin]=useCheckAdmin(user)
   const handleLogout=()=>{
     logout()
     .then(res=>{
@@ -36,7 +38,7 @@ const links=<>
              }
             </ul>
           </div>
-        <Link to={'/'}>  <a className="text-green-950  text-xl">GIMIM Corporation </a></Link>
+        <Link to={'/'}>  <span className="text-green-950  text-xl">GIMIM Corporation </span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -59,7 +61,7 @@ const links=<>
                   tabIndex={0}
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                 
-                  <li><Link to={'/dashboard'}>Dashboard</Link></li>
+          {isAdmin && <li><Link to={'/dashboard/overview'}>Dashboard</Link></li>}
                   <li><a onClick={handleLogout}> Logout</a></li>
                 </ul>
               </div>:     <Link to={'/login'}><button className="btn glass primary">Login</button></Link>

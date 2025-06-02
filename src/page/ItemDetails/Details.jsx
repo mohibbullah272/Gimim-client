@@ -142,13 +142,7 @@ const handleContact =()=>{
             >
         Buy Now
             </motion.button>
-            <motion.button 
-              className="btn-add-cart"
-              whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(255, 123, 0, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Add To WishList
-            </motion.button>
+    
           </motion.div>
         </motion.div>
       </div>

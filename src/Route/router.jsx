@@ -7,6 +7,8 @@ import AdminOverview from "@/page/Dashboard/AdminOverview";
 import UserProfile from "@/page/Dashboard/UserProfile";
 import Details from "@/page/ItemDetails/Details";
 import Login from "@/page/Login/Login";
+import ManageProduct from "@/page/ManageProduct/ManageProduct";
+import NotFoundPage from "@/page/NotFound/NotFoundPage";
 import PrivacyPolicy from "@/page/PrivacyPolicy/PrivacyPolicy";
 import Signup from "@/page/Signup/Signup";
 import TermsOfService from "@/page/TermsOfService/TermsOfService";
@@ -23,6 +25,7 @@ const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<NotFoundPage></NotFoundPage>,
         children:([
             {
                 path:'/',
@@ -65,7 +68,12 @@ const router = createBrowserRouter([
     {
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
+         errorElement:<NotFoundPage></NotFoundPage> ,                              
         children:([
+            {
+                path:'overview',
+                element:<AdminOverview></AdminOverview>
+            },
             {
                 path:'profile',
                 element:<UserProfile></UserProfile>
@@ -82,6 +90,10 @@ const router = createBrowserRouter([
             {
                 path:'user',
                 element:<UserManagementTable></UserManagementTable>
+            },
+            {
+                path:'manageProduct',
+                element:<ManageProduct></ManageProduct>
             }
         ])
     }
