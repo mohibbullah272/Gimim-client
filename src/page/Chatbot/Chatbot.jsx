@@ -38,7 +38,7 @@ const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:1000/chat', {
+      const response = await fetch('https://gimim-server.vercel.app/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -83,7 +83,7 @@ export default function Footer() {
                 <MessageCircle className="w-5 h-5 text-gray-300 group-hover:text-white" />
               </a>
               <a 
-                href="gimimcorporationbd@gmail.com" 
+                href="https://gimimcorporationbd@gmail.com" 
                 className="bg-gray-800 p-3 rounded-lg hover:bg-red-600 transition-colors duration-200 group"
               >
                 <Mail className="w-5 h-5 text-gray-300 group-hover:text-white" />

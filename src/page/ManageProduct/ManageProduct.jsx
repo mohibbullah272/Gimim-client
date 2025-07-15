@@ -16,7 +16,7 @@ const ManageProduct = () => {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('http://localhost:1000/products');
+            const response = await axios.get('https://gimim-server.vercel.app/products');
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -30,7 +30,7 @@ const ManageProduct = () => {
         if (window.confirm('Are you sure you want to delete this product?')) {
             setLoading(true);
             try {
-                await axios.delete(`http://localhost:1000/products/${productId}`);
+                await axios.delete(`https://gimim-server.vercel.app/products/${productId}`);
                 setProducts(products.filter(product => product._id !== productId));
                 alert('Product deleted successfully!');
             } catch (error) {

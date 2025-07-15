@@ -47,7 +47,7 @@ const userInfo ={
     isAdmin:false
 }
   
-    axios.post(`http://localhost:1000/users`,{
+    axios.post(`https://gimim-server.vercel.app/users`,{
         userInfo
     })
     .then(res=>

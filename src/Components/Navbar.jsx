@@ -24,7 +24,8 @@ const links=<>
 <NavLink to={'/privacyPolicy'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <IoMdDocument />Privacy Policy</span></NavLink>
 </>
     return (
-        <div className="navbar  max-w-7xl mx-auto  shadow-xl">
+        <div className=" navbar max-w-[1400px] mx-auto w-full px-4">
+          
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +39,7 @@ const links=<>
              }
             </ul>
           </div>
-        <Link to={'/'}>  <span className="text-green-950  text-xl">GIMIM Corporation </span></Link>
+        <Link to={'/'}>  <span className="text-gray-950 font-semibold text-xl">GIMIM Corporation </span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

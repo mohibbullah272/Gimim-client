@@ -49,7 +49,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-auto md:h-96 overflow-hidden rounded-lg shadow-lg">
+    <div className="flex mt-[68px] flex-col md:flex-row w-full h-auto md:h-96 overflow-hidden ">
       {/* Left side - Content */}
       <div 
         className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center"

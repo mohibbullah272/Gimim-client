@@ -13,7 +13,7 @@ const Contact = () => {
       const subject =e.target.subject.value 
       const message= e.target.message.value 
       console.log(name,email,subject)
-      const {data} = await axios.post(`http://localhost:1000/contact`,{
+      const {data} = await axios.post(`https://gimim-server.vercel.app/contact`,{
         name,email,subject,message
       })
       console.log(data)

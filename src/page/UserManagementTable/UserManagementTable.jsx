@@ -6,7 +6,7 @@ const UserManagementTable = () => {
   // Fake user data (to be replaced with actual backend data)
   const [users,setUsers]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:1000/users')
+    axios.get('https://gimim-server.vercel.app/users')
     .then(res=> setUsers(res.data))
   },[])
 
