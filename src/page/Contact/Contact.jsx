@@ -1,11 +1,9 @@
-import React from 'react';
-import { FaEnvelope, FaWhatsapp, FaFacebook, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from 'axios';
-
+import { Mail } from "lucide-react";
+import { FaWhatsapp ,FaPhone,FaFacebook,FaMapMarkerAlt} from "react-icons/fa";
 const Contact = () => {
-    const position = [23.8041, 90.3654]
+ 
     const handleSendMessage=async(e)=>{
       e.preventDefault()
       const name = e.target.name.value 
@@ -35,7 +33,7 @@ const Contact = () => {
           <div className="space-y-6">
             <div className="flex items-center">
               <div className="bg-[#FF9F1C] p-3 rounded-full">
-                <FaEnvelope className="text-white text-xl" />
+                <Mail className="text-white text-xl" />
               </div>
               <div className="ml-4">
                 <p className="text-sm text-gray-500">Email</p>
@@ -79,7 +77,7 @@ const Contact = () => {
               </div>
               <div className="ml-4">
                 <p className="text-sm text-gray-500">Location</p>
-                <p className="text-lg font-medium">689 west ibrahimpur, Dhaka-1216</p>
+                <p className="text-lg font-medium">689, West Ibrahimpur, 80 Dag Kafrul, Dhaka-1216, Bangladesh</p>
               </div>
             </div>
           </div>
@@ -160,15 +158,12 @@ const Contact = () => {
             <h2 className="text-xl font-bold text-gray-800 mb-4">Business Hours</h2>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-gray-600">Monday - Friday</span>
-                <span className="font-medium">9:00 AM - 6:00 PM</span>
+                <span className="text-gray-600">Saturday - Thursday</span>
+                <span className="font-medium">9:00 AM - 5:00 PM</span>
               </div>
+       
               <div className="flex justify-between">
-                <span className="text-gray-600">Saturday</span>
-                <span className="font-medium">10:00 AM - 4:00 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-600">Sunday</span>
+                <span className="text-gray-600">Friday</span>
                 <span className="font-medium">Closed</span>
               </div>
             </div>
@@ -176,19 +171,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Map Section */}
-      <div className="max-w-7xl mx-auto mt-12">
-      <div className="bg-white rounded-xl shadow-lg p-2">
-        <div className="rounded-lg overflow-hidden">
-          <MapContainer center={position} zoom={13} style={{ height: "300px", width: "100%" }}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={position}>
-              <Popup>123 Adhesive Ave, Bonding City, BC 12345</Popup>
-            </Marker>
-          </MapContainer>
-        </div>
-      </div>
-    </div>
+  
 
     
     </div>

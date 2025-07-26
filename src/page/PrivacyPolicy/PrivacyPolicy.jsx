@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/gimim-logo.png'
 
 const PrivacyPolicy = () => {
@@ -65,7 +64,7 @@ const PrivacyPolicy = () => {
             </h3>
             <div className="space-y-2 text-gray-700">
               <p><strong>Address:</strong> Dhaka, Bangladesh</p>
-              <p><strong>Email:</strong> privacy@gimimcorporation.com</p>
+              <p><strong>Email:</strong> gimimcorporationbd@gmail.com</p>
               <p><strong>Last Updated:</strong> March 2024</p>
             </div>
           </div>

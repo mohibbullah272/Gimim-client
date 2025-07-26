@@ -1,11 +1,12 @@
-import React from 'react';
-import { FaUserFriends } from 'react-icons/fa';
+import Title from "@/Components/Title";
+import { FaUserFriends } from "react-icons/fa";
 
 const WhyChose = () => {
     return (
         <section className="max-w-7xl mx-auto mb-16">
+          <Title title={"Why Choose GIMIM CORPORATION"} description={"We’re more than a supplier — we’re your adhesive ally. Trusted by wholesalers across Bangladesh"}></Title>
         <div className="bg-white rounded-xl shadow-lg p-8 lg:p-12">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Why Choose GIMIM CORPORATION</h2>
+     
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex">
               <div className="bg-[#FFB941] h-12 w-12 rounded-full flex items-center justify-center flex-shrink-0 mt-1">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,7 +26,7 @@ const AddProductPage = () => {
   });
 
   const handleImageUpload = async (event) => {
-    console.log('function trigger1')
+  
     const file = event.target.files[0];
     if (!file) return;
 

@@ -1,11 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import loginBg from '../../assets/login-bg.png'
-import GoogleLogin from '@/Shared/GoogleLogin';
 import { useContext, useState } from 'react';
-import { IoEye } from "react-icons/io5";
-import { IoMdEyeOff } from "react-icons/io";
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '@/AuthProvider/AuthProvider';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import GoogleLogin from '@/Shared/GoogleLogin';
 const Login = () => {
     const [showPass,setShowPass]=useState(false)
     const navigate = useNavigate()
@@ -30,7 +29,7 @@ loginWithEmail(email,password)
         <div className='min-h-screen mt-20 max-w-7xl mx-auto' style={{backgroundImage:`url(${loginBg})`,
         backgroundPosition:'center', 
         backgroundRepeat:'no-repeat',
-        backgroundSize:'center'
+        backgroundSize:'cover'
         }}>
             <div  className='flex md:flex-row flex-col justify-between md:gap-24 gap-10 md:p-10 items-center'>
 <div>
@@ -50,7 +49,7 @@ loginWithEmail(email,password)
   <p onClick={()=>setShowPass(!showPass)} className='absolute bottom-[230px] right-8'>
 
   {
-    showPass?<IoMdEyeOff  className='text-xl'/>:  <IoEye className='text-xl'/>
+    showPass?<FaEyeSlash  className='text-xl'/>:  <FaEye className='text-xl'/>
   }
   </p>
   <button className="btn primary text-green-950 mt-4">Login</button>

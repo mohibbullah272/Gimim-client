@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from '../../assets/gimim-logo.png'
 const TermsOfService = () => {
   const [activeSection, setActiveSection] = useState(null);

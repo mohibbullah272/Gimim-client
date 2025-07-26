@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import axios from 'axios';
-import img1 from '../../assets/product5.png';
 import deliveryLogo from '../../assets/delivry.png';
 import returnLogo from '../../assets/icons8-return-30.png';
-import tkLogo from '../../assets/taka.png';
-import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import './Details.css';
-
+import { motion } from "motion/react"
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 const Details = () => {
-  const [quantity, setQuantity] = useState(0);
+
   const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   
-  const { productName, price, rating, description, image } = item || {};
+  const { productName,  description, image } = item || {};
   
   const fetchData = async () => {
     try {
@@ -34,7 +31,7 @@ const Details = () => {
   }, []);
 
   if (loading) {
-    return <LoadingScreen />;
+    return <LoadingScreen/>;
   }
 const handleContact =()=>{
   const phoneNumber = "+8801886967825"

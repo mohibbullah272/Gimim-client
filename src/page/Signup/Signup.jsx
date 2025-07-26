@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import signupBanner from '../../assets/login-bg.png'
 import { Link, useNavigate } from 'react-router-dom';
-import GoogleLogin from '@/Shared/GoogleLogin';
-import { IoEye } from "react-icons/io5";
-import { IoMdEyeOff } from "react-icons/io";
 import { useForm } from "react-hook-form"
 import { AuthContext } from '@/AuthProvider/AuthProvider';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import GoogleLogin from '@/Shared/GoogleLogin';
 const Signup = () => {
 const [showPass,setShowPass]=useState(false)
 const navigate = useNavigate()
@@ -58,7 +57,7 @@ const {
   <p onClick={()=>setShowPass(!showPass)} className='absolute bottom-[230px] right-8'>
 
   {
-    showPass?<IoMdEyeOff  className='text-xl'/>:  <IoEye className='text-xl'/>
+    showPass?<FaEyeSlash  className='text-xl'/>:  <FaEye className='text-xl'/>
   }
   </p>
   <button className="btn primary text-green-950 mt-4">Signup</button>

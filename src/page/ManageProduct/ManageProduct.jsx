@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Trash2, Edit, X, Save, Plus } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Plus, Trash2 } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 const ManageProduct = () => {
     const [products, setProducts] = useState([]);
@@ -20,7 +21,7 @@ const ManageProduct = () => {
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
-            alert('Failed to fetch products');
+            toast.error('Failed to fetch products');
         } finally {
             setLoading(false);
         }
@@ -32,10 +33,10 @@ const ManageProduct = () => {
             try {
                 await axios.delete(`https://gimim-server.vercel.app/products/${productId}`);
                 setProducts(products.filter(product => product._id !== productId));
-                alert('Product deleted successfully!');
+                toast.success('Product deleted successfully!');
             } catch (error) {
                 console.error('Error deleting product:', error);
-                alert('Failed to delete product');
+                toast.error('Failed to delete product');
             } finally {
                 setLoading(false);
             }

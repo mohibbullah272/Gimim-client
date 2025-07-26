@@ -1,9 +1,9 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { RouterProvider } from 'react-router-dom'
 import router from './Route/router'
+import { StrictMode } from 'react'
 import AuthProvider from './AuthProvider/AuthProvider'
+import { RouterProvider } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 
 

@@ -1,42 +1,10 @@
-import React from 'react';
-import { 
-  LineChart, 
-  Line, 
-  BarChart, 
-  Bar, 
-  PieChart, 
-  Pie, 
-  Cell, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  Legend, 
-  ResponsiveContainer,
-  AreaChart,
-  Area
-} from 'recharts';
-import { 
-  DollarSign, 
-  Users, 
-  Package, 
-  ShoppingCart, 
-  CreditCard, 
-  User, 
-  Settings, 
-  LogOut, 
-  Bell, 
-  Calendar, 
-  ChevronDown, 
-  Search,
-  TrendingUp,
-  AlertCircle,
-  ChevronRight,
-  ArrowUp,
-  ArrowDown,
-  Truck,
-  Activity
-} from 'lucide-react';
+import {  ArrowDown, ArrowUp, DollarSign,  ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { Tooltip } from "react-leaflet";
+import { Area, AreaChart, CartesianGrid, Cell, Legend, Line, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+
+
+
+
 
 const AdminOverview = () => {
   // Sample data - replace with your backend data

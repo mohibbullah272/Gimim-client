@@ -1,12 +1,13 @@
-import React from 'react';
-import { FaIndustry } from 'react-icons/fa';
+import Title from "@/Components/Title";
+import { FaIndustry } from "react-icons/fa";
 
 const OurExpertise = () => {
     return (
         <section className="max-w-7xl mx-auto mb-16 bg-white rounded-xl shadow-lg p-8  lg:p-12">
+      <Title title={"Our Expertise"} description={"With years of industry experience and deep product knowledge, Gimim Corporation leads the adhesive market in Bangladesh"}></Title>
         <div className="">
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Expertise</h2>
+            
             <div className="space-y-4 text-gray-600">
               <p>
                 At GIMIM CORPORATION, we've developed specialized knowledge across various adhesive applications and industries. Our technical team understands the unique bonding challenges faced by different sectors.

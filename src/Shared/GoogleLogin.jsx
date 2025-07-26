@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import googleIcon from '../assets/google-Icon.svg'
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';

@@ -1,6 +1,7 @@
 
+import ScrollToTop from "@/Components/ScrollToTop";
+import { Menu } from "lucide-react";
 import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -15,7 +16,7 @@ const links = <div>
   <div className="flex flex-col mt-5 space-y-2">
 
     
-    <NavLink 
+    <NavLink
       to="/dashboard/overview" 
       className={({ isActive }) => 
         `${linkStyles.default} ${isActive ? linkStyles.active : ''}`
@@ -145,7 +146,7 @@ const links = <div>
         className={`lg:hidden absolute top-0  ${isOpen?'left-52':'left-0'} z-50 p-2 primary text-white rounded-md`}
         onClick={toggleMenu}
       >
-        {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+        {isOpen ? <Menu size={24} /> : <Menu size={24} />}
       </button>
 
       {/* Sidebar */}
@@ -164,6 +165,7 @@ const links = <div>
 
  
       <section className="col-span-12 lg:col-span-9 ">
+        <ScrollToTop></ScrollToTop>
      <Outlet></Outlet>
       </section>
     </div>

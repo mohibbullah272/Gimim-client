@@ -1,6 +1,6 @@
-import React from 'react';
-import { Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { FaFacebook } from 'react-icons/fa';
 import footerImg from '../assets/footer_logo.png'
+import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -72,7 +72,7 @@ export default function Footer() {
                 target='_blank' 
                 className="bg-gray-800 p-3 rounded-lg hover:bg-blue-600 transition-colors duration-200 group"
               >
-                <Facebook className="w-5 h-5 text-gray-300 group-hover:text-white" />
+                <FaFacebook className="w-5 h-5 text-gray-300 group-hover:text-white" />
               </a>
               <a 
                 href="https://wa.me/8801915651053?
@@ -83,7 +83,7 @@ export default function Footer() {
                 <MessageCircle className="w-5 h-5 text-gray-300 group-hover:text-white" />
               </a>
               <a 
-                href="https://gimimcorporationbd@gmail.com" 
+            href="mailto:gimimcorporationbd@gmail.com"  
                 className="bg-gray-800 p-3 rounded-lg hover:bg-red-600 transition-colors duration-200 group"
               >
                 <Mail className="w-5 h-5 text-gray-300 group-hover:text-white" />

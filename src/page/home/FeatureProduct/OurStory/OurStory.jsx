@@ -1,14 +1,15 @@
-import React from 'react';
-import { FaHistory } from 'react-icons/fa';
+import Title from '@/Components/Title';
 import officeImg from '../../../../assets/gimim-office.jpg'
+import { FaHistory } from 'react-icons/fa';
 const OurStory = () => {
     return (
        
            <section className="max-w-7xl mx-auto mb-16">
+            <Title title={"Our Journey"} description={"Discover how Gimim Corporation built a reputation for quality, consistency, and wholesale excellence"}></Title>
            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
              <div className="grid grid-cols-1 lg:grid-cols-2">
                <div className="p-8 lg:p-12">
-                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+                
                  <div className="space-y-4 text-gray-600">
                  <p>
  GIMIM CORPORATION was born not out of wealth, but out of pure hustle and vision. The founder started with nothing—no capital, no big setup—just a strong will to build something of his own.

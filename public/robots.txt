@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gimimcorporationbd.com/sitemap.xml
+Sitemap: https://www.gimimcorporationbd.com/sitemap.xml

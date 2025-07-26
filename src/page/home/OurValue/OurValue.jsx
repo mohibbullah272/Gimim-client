@@ -1,10 +1,10 @@
-import React from 'react';
-import { FaCheckCircle, FaHandshake, FaTrophy } from 'react-icons/fa';
+import Title from "@/Components/Title";
+import { FaCheckCircle, FaHandshake, FaTrophy } from "react-icons/fa";
 
 const OurValue = () => {
     return (
         <section className="max-w-7xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">Our Values</h2>
+      <Title title={"What We Stand For"} description={"We're committed to delivering premium quality at wholesale value every time"}></Title>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
             <div className="bg-[#FF9F1C] inline-flex p-4 rounded-full mb-6">

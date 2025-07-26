@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Home, ArrowLeft, Search } from 'lucide-react';
+import { ArrowLeft, Home } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const NotFoundPage = () => {
     const [isVisible, setIsVisible] = useState(false);

@@ -1,30 +1,27 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from "motion/react"
 import { Link } from 'react-router-dom';
-import useCheckAdmin from '@/Shared/useCheckAdmin';
 
+import useLazyLoadWithSkeleton from '@/Shared/useLazyLoadWithSkeleton';
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+const [ref,loaded]=useLazyLoadWithSkeleton()
 
   // Sample product images - replace these with actual product images
   const products = [
     {
       id: 1,
       image: "https://i.ibb.co.com/YBNN3Rns/product2.png",
-   
       description: "Our bestselling item"
     },
-    // https://i.ibb.co.com/YBNN3Rns/product2.png
     {
       id: 2,
       image: "https://i.ibb.co.com/d47mqbg4/emergency-drum-removebg-preview.png",
-   
       description: "Customer favorite"
     },
     {
       id: 3,
       image: "https://i.ibb.co.com/bjphJbWW/super-glue-drum-removebg-preview.png",
-   
       description: "New arrival"
     }
   ];
@@ -49,82 +46,89 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex mt-[68px] flex-col md:flex-row w-full h-auto md:h-96 overflow-hidden ">
-      {/* Left side - Content */}
-      <div 
-        className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center"
-        style={{ backgroundColor: colors.primary }}
+    <div ref={ref}>
+ {
+  loaded?<div className="flex max-w-7xl px-5 mx-auto justify-center flex-col gap-4">
+  <div className="skeleton h-32 w-full"></div>
+  <div className="skeleton h-4 w-28"></div>
+  <div className="skeleton h-4 w-full"></div>
+  <div className="skeleton h-4 w-full"></div>
+</div>: <div  className="flex mt-[68px] flex-col md:flex-row w-full h-auto md:h-[500px] overflow-hidden">
+  {/* Left side - Content */}
+  <div 
+    className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center h-96 md:h-full"
+    style={{ backgroundColor: colors.primary }}
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1 className="text-2xl md:text-4xl font-bold text-white mb-3">
+        GIMIM CORPORATION
+      </h1>
+      <div className="h-1 w-20 bg-white mb-4"></div>
+      <p className="text-sm md:text-lg text-white mb-6">
+        Importer and wholesaler of premium products with unmatched quality and service
+      </p>
+      <motion.button 
+        className="px-6 py-2 rounded-md text-sm md:text-base font-medium"
+        style={{ backgroundColor: colors.accent }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-2xl md:text-4xl font-bold text-white mb-3">
-            GIMIM CORPORATION
-          </h1>
-          <div className="h-1 w-20 bg-white mb-4"></div>
-          <p className="text-sm md:text-lg text-white mb-6">
-            Importer and wholesaler of premium products with unmatched quality and service
-          </p>
-          <motion.button 
-            className="px-6 py-2 rounded-md text-sm md:text-base font-medium"
-            style={{ backgroundColor: colors.accent }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-         <Link to={'/allProduct'}>Explore Products</Link>
-          </motion.button>
-        </motion.div>
-      </div>
-      
-      {/* Right side - Slider */}
-      <div 
-        className="w-full md:w-1/2 relative"
-        style={{ backgroundColor: colors.primary }}
+        <Link to={'/allProduct'}>Explore Products</Link>
+      </motion.button>
+    </motion.div>
+  </div>
+  {/* Right side - Slider */}
+  <div 
+    className="w-full md:w-1/2 relative h-96 md:h-full flex items-center justify-center"
+    style={{ backgroundColor: colors.primary }}
+  >
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={currentSlide}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="w-full h-full flex items-center justify-center p-4"
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full h-64 md:h-full"
-          >
-            <img 
-              src={products[currentSlide].image} 
-              alt={products[currentSlide].title}
-              className="w-full h-full scale-75 object-cover"
-            />
-            <div 
-              className="absolute bottom-0 left-0 right-0 p-4"
-             // Semi-transparent overlay
-            >
-         
-              <p className="text-sm md:text-base text-white opacity-90">
-                {products[currentSlide].description}
-              </p>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-        
-        {/* Indicator dots */}
-        <div className="absolute bottom-20 right-4 flex space-x-2">
-          {products.map((_, index) => (
-            <motion.button
-              key={index}
-              className="w-3 h-3 rounded-full"
-              style={{ 
-                backgroundColor: currentSlide === index ? colors.accent : 'white',
-                opacity: currentSlide === index ? 1 : 0.6
-              }}
-              onClick={() => setCurrentSlide(index)}
-              whileHover={{ scale: 1.2 }}
-            />
-          ))}
-        </div>
-      </div>
+        <img 
+          src={products[currentSlide].image} 
+          alt={products[currentSlide].title}
+          className="max-w-full max-h-full object-contain"
+        />
+      </motion.div>
+    </AnimatePresence>
+    
+    {/* Description overlay */}
+    <div className="absolute bottom-4 left-4 right-4">
+      <p className="text-sm md:text-base text-white opacity-90 text-center">
+        {products[currentSlide].description}
+      </p>
+    </div>
+    
+    {/* Indicator dots */}
+    <div className="absolute bottom-16 right-4 flex space-x-2">
+      {products.map((_, index) => (
+        <motion.button
+          key={index}
+          className="w-3 h-3 rounded-full"
+          style={{ 
+            backgroundColor: currentSlide === index ? colors.accent : 'white',
+            opacity: currentSlide === index ? 1 : 0.6
+          }}
+          onClick={() => setCurrentSlide(index)}
+          whileHover={{ scale: 1.2 }}
+        />
+      ))}
+    </div>
+  </div>
+</div>
+ }
+   
     </div>
   );
 };

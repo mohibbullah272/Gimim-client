@@ -1,10 +1,12 @@
+
 import Dashboard from "@/Layout/Dashboard";
 import Main from "@/Layout/Main";
 import AddProductPage from "@/page/AddProductPage/AddProductPage";
 import AllProduct from "@/page/AllProduct/AllProduct";
 import Contact from "@/page/Contact/Contact";
 import AdminOverview from "@/page/Dashboard/AdminOverview";
-import UserProfile from "@/page/Dashboard/UserProfile";
+
+import Home from "@/page/home/Home/Home";
 import Details from "@/page/ItemDetails/Details";
 import Login from "@/page/Login/Login";
 import ManageProduct from "@/page/ManageProduct/ManageProduct";
@@ -13,8 +15,6 @@ import PrivacyPolicy from "@/page/PrivacyPolicy/PrivacyPolicy";
 import Signup from "@/page/Signup/Signup";
 import TermsOfService from "@/page/TermsOfService/TermsOfService";
 import UserManagementTable from "@/page/UserManagementTable/UserManagementTable";
-import Home from "@/page/home/Home/Home";
-
 import {
     createBrowserRouter,
  
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/details/:id',
-                element:<Details></Details>,
+                element:<Details></Details>
               
                 
             },
@@ -74,15 +74,9 @@ const router = createBrowserRouter([
                 path:'overview',
                 element:<AdminOverview></AdminOverview>
             },
-            {
-                path:'profile',
-                element:<UserProfile></UserProfile>
-            },
-            // admins only 
-            {
-                path:'overview',
-                element:<AdminOverview></AdminOverview>
-            },
+      
+     
+         
             {
                 path:'addProduct',
                 element:<AddProductPage></AddProductPage>

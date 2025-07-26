@@ -1,11 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import tkIcon from '../assets/taka.png';
 import './Cards.css';
-
+import { motion } from "motion/react"
 const Cards = ({ product }) => {
-    const { _id, productName, price, image, description } = product || {};
+    const { _id, productName,  image, description } = product || {};
     
     return (
         <motion.div 

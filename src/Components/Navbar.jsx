@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { IoMdDocument, IoMdHome } from "react-icons/io";
-import { FaBoxes } from "react-icons/fa";
-import { FaHeadset } from "react-icons/fa6";
+import { useContext } from 'react';
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 import userIcon from '../assets/user-icon.png'
 import useCheckAdmin from '@/Shared/useCheckAdmin';
+import { Link, NavLink } from 'react-router-dom';
+import { Home, Paperclip } from 'lucide-react';
+import { FaBoxes, FaHeadset } from 'react-icons/fa';
 const Navbar = () => {
   const {user,logout}=useContext(AuthContext)
 
@@ -18,10 +17,10 @@ const Navbar = () => {
   }
    
 const links=<>
-<NavLink to={'/'}><span className='flex items-center gap-2 hover:text-[#a07032b4]    p-2'> <IoMdHome className='text-xl'/>Home</span></NavLink>
+<NavLink to={'/'}><span className='flex items-center gap-2 hover:text-[#a07032b4]    p-2'> <Home className='text-xl'/>Home</span></NavLink>
 <NavLink to={'/allProduct'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2 '> <FaBoxes className='text-xl'/>All Product</span></NavLink>
 <NavLink to={'/contact'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <FaHeadset className='text-xl'/>Contact</span></NavLink>
-<NavLink to={'/privacyPolicy'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <IoMdDocument />Privacy Policy</span></NavLink>
+<NavLink to={'/privacyPolicy'}><span className='flex items-center gap-2 hover:text-[#a07032b4]  p-2'> <Paperclip />Privacy Policy</span></NavLink>
 </>
     return (
         <div className=" navbar max-w-[1400px] mx-auto w-full px-4">
@@ -33,7 +32,7 @@ const links=<>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content  primary rounded-box z-50 mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-200 rounded-box z-50 mt-3 w-52 p-2 shadow">
              {
                 links
              }
