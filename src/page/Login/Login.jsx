@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '@/AuthProvider/AuthProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import GoogleLogin from '@/Shared/GoogleLogin';
+import toast from 'react-hot-toast';
 const Login = () => {
     const [showPass,setShowPass]=useState(false)
     const navigate = useNavigate()
@@ -20,8 +21,13 @@ const Login = () => {
         const password = data?.password
 loginWithEmail(email,password)
 .then(result=>{
-    console.log(result.user)
+  
     navigate('/')
+})
+.catch((err)=>{
+  if(err){
+    toast.error(`incorrect credential or you don't have a account`)
+  }
 })
       }
 

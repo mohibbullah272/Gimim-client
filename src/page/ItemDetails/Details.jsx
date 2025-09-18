@@ -6,6 +6,7 @@ import returnLogo from '../../assets/icons8-return-30.png';
 import './Details.css';
 import { motion } from "motion/react"
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import Swal from 'sweetalert2';
 const Details = () => {
 
   const [item, setItem] = useState([]);
@@ -34,10 +35,23 @@ const Details = () => {
     return <LoadingScreen/>;
   }
 const handleContact =()=>{
-  const phoneNumber = "+8801886967825"
-  const message =  `Hi I'm interested in your ${productName} products. Is it available`
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
+  Swal.fire({
+    title: "Are you sure?",
+    text: "This link will redirect you into another site",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Buy Now"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const phoneNumber = "+8801915651053"
+      const message =  `Hi I'm interested in your ${productName} products. Is it available`
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+  });
+
 
 }
 
@@ -107,7 +121,9 @@ const handleContact =()=>{
             transition={{ duration: 0.4, delay: 0.7 }}
           >
             <p className="info-row">
-              <img className="info-icon" src={deliveryLogo} alt="delivery" />
+              <img
+              loading='lazy'
+              className="info-icon" src={deliveryLogo} alt="delivery" />
               <span>Standard Delivery Time</span>
             </p>
             <p className="delivery-time">7 to 16 days</p>
@@ -119,7 +135,9 @@ const handleContact =()=>{
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.8 }}
           >
-            <img className="info-icon" src={returnLogo} alt="return policy" />
+            <img 
+            loading='lazy'
+            className="info-icon" src={returnLogo} alt="return policy" />
             <span>7 days return policy</span>
           </motion.p>
           

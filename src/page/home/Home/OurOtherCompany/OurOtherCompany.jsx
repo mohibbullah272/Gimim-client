@@ -13,10 +13,10 @@ const OurOtherCompany = () => {
 
   // MM Corporation company data
   const companyData = {
-    name: "MM Corporation",
-    fullName: "MM Corporation Bangladesh",
+    name: "MM INTERNATIONAL",
+    fullName: "MM INTERNATIONAL Bangladesh",
     tagline: "Excellence in Adhesive Solutions",
-    description: "MM Corporation is a sibling concern of GIMIM Corporation, specializing in premium adhesive products, industrial bonding solutions, and comprehensive wholesale services across Bangladesh. We complement GIMIM's operations by providing specialized adhesive technologies and expanded market coverage.",
+    description: "MM INTERNATIONAL is a sibling concern of GIMIM Corporation, specializing in premium adhesive products, industrial bonding solutions, and comprehensive wholesale services across Bangladesh. We complement GIMIM's operations by providing specialized adhesive technologies and expanded market coverage.",
     established: "2018",
     logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop",
     heroImage: "https://i.ibb.co/jk2z7XQ9/mm-corporation.jpg",
@@ -70,7 +70,7 @@ const OurOtherCompany = () => {
       </h2>
       <div className="h-1 w-24 mx-auto mb-6" style={{ backgroundColor: colors.accent }}></div>
       <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-        Discover MM Corporation, our trusted sibling concern that extends our commitment to excellence in Bangladesh's adhesive industry
+        Discover MM INTERNATIONAL, our trusted sibling concern that extends our commitment to excellence in Bangladesh's adhesive industry
       </p>
     </motion.div>
 
@@ -86,8 +86,9 @@ const OurOtherCompany = () => {
         {/* Company Image */}
         <div className="">
           <img
+          loading="lazy"
             src={companyData.heroImage}
-            alt="MM Corporation"
+            alt="MM INTERNATIONAL"
             className="w-full h-full "
           />
     
@@ -97,8 +98,9 @@ const OurOtherCompany = () => {
         <div className="">
           <div className="flex items-center mb-4">
             <img
+            loading="lazy"
               src={companyData.logo}
-              alt="MM Corporation Logo"
+              alt="MM INTERNATIONAL Logo"
               className="w-16 h-16 rounded-full mr-4 border-2"
               style={{ borderColor: colors.accent }}
             />

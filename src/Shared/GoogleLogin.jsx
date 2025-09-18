@@ -13,7 +13,9 @@ const GoogleLogin = () => {
     }
     return (
         <div>
-            <button onClick={handleGoogleLogin} className='flex w-full my-2 items-center gap-3 btn btn-outline'><img className='w-7 h-7' src={googleIcon} alt="google-icon" /> Login With Google</button>
+            <button onClick={handleGoogleLogin} className='flex w-full my-2 items-center gap-3 btn btn-outline'><img 
+                 loading='lazy'
+            className='w-7 h-7' src={googleIcon} alt="google-icon" /> Login With Google</button>
         </div>
     );
 };

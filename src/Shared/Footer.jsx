@@ -11,7 +11,9 @@ export default function Footer() {
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center mb-4">
               <div className=" rounded-lg mr-3">
-                 <img src={footerImg} alt="" />
+                 <img 
+                      loading='lazy'
+                 src={footerImg} alt="" />
               </div>
          
             </div>

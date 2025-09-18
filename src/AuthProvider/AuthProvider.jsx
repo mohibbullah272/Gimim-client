@@ -49,9 +49,10 @@ const userInfo ={
   
     axios.post(`https://gimim-server.vercel.app/users`,{
         userInfo
+        
     })
     .then(res=>
-   {     console.log(res.data)
+   {    
         if(res.data.insertedId){
             window.location.reload()
         }

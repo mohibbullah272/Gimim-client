@@ -10,11 +10,11 @@ const Contact = () => {
       const email =e.target.email.value 
       const subject =e.target.subject.value 
       const message= e.target.message.value 
-      console.log(name,email,subject)
+     
       const {data} = await axios.post(`https://gimim-server.vercel.app/contact`,{
         name,email,subject,message
       })
-      console.log(data)
+    
       e.target.reset()
     }
   return (

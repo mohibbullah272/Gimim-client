@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Cards.css';
 import { motion } from "motion/react"
+
 const Cards = ({ product }) => {
     const { _id, productName,  image, description } = product || {};
-    
+  
     return (
         <motion.div 
             className="card-container"
@@ -17,7 +18,9 @@ const Cards = ({ product }) => {
         >
             <div className="card-white">
                 <div className="card-image-container">
-                    <img src={image} alt={productName} className="card-image" />
+               
+                    <img  loading='lazy' src={image} alt={productName} className="card-image" />
+               
                 
                 </div>
                 

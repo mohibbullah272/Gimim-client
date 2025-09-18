@@ -35,6 +35,7 @@ const OurStory = () => {
                </div>
                <div className=" flex items-center justify-center p-8">
                  <img 
+                 loading='lazy'
                    src={officeImg}
                    alt="SuperGlue Wholesale Facility" 
                    className="rounded-lg shadow-md" 

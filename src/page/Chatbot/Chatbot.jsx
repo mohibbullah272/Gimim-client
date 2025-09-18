@@ -1,4 +1,4 @@
-import { Bot, MessageCircle, Send, User } from 'lucide-react';
+import { Bot, MessageCircle, Send, User, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 const ChatBot = () => {
@@ -64,7 +64,7 @@ const ChatBot = () => {
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error sending message:', error);
+      // console.error('Error sending message:', error);
       const errorMessage = {
         id: Date.now() + 1,
         type: 'bot',

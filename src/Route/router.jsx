@@ -12,6 +12,7 @@ import Login from "@/page/Login/Login";
 import ManageProduct from "@/page/ManageProduct/ManageProduct";
 import NotFoundPage from "@/page/NotFound/NotFoundPage";
 import PrivacyPolicy from "@/page/PrivacyPolicy/PrivacyPolicy";
+import PrivetRoute from "@/page/PrivetRoute/PrivetRoute";
 import Signup from "@/page/Signup/Signup";
 import TermsOfService from "@/page/TermsOfService/TermsOfService";
 import UserManagementTable from "@/page/UserManagementTable/UserManagementTable";
@@ -67,27 +68,27 @@ const router = createBrowserRouter([
     // dashboard
     {
         path:'/dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
          errorElement:<NotFoundPage></NotFoundPage> ,                              
         children:([
             {
                 path:'overview',
-                element:<AdminOverview></AdminOverview>
+                element:<PrivetRoute><AdminOverview></AdminOverview></PrivetRoute>
             },
       
      
          
             {
                 path:'addProduct',
-                element:<AddProductPage></AddProductPage>
+                element:<PrivetRoute><AddProductPage></AddProductPage></PrivetRoute>
             },
             {
                 path:'user',
-                element:<UserManagementTable></UserManagementTable>
+                element:<PrivetRoute><UserManagementTable></UserManagementTable></PrivetRoute>
             },
             {
                 path:'manageProduct',
-                element:<ManageProduct></ManageProduct>
+                element:<PrivetRoute><ManageProduct></ManageProduct></PrivetRoute>
             }
         ])
     }

@@ -12,7 +12,7 @@ const PopularProduct = () => {
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 place-items-center">
   {[img1, img2, img3, img4, img5, img6].map((img, index) => (
     <div key={index} className="w-64 h-64 flex items-center justify-center rounded-full  p-2">
-      <img className="rounded-full w-full h-full object-cover" src={img} alt={`Image ${index + 1}`} />
+      <img loading='lazy' className="rounded-full w-full h-full object-cover" src={img} alt={`Image ${index + 1}`} />
     </div>
   ))}
 </div>

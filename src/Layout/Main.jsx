@@ -39,9 +39,9 @@ const Main = () => {
   return (
     <div>
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-2xl bg-opacity-5 ">
-        <Suspense fallback={<LoadingScreen />}>
+      
           <Navbar />
-        </Suspense>
+    
       </header>
       <main className="max-w-[1400px] mx-auto min-h-screen mt-[68px]">
         <Suspense fallback={<LoadingScreen />}>

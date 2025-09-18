@@ -15,7 +15,7 @@ const OurBranches = () => {
       name: "Head Office",
       city: "Dhaka",
       address: "689, Wes Ibrahimpur, 80 Dag Kafrul, Dhaka-1216 Bangladesh",
-      phone: "+8801625-843626",
+      phone: "+8801915651053",
    
 
     },
@@ -24,7 +24,7 @@ const OurBranches = () => {
       name: "Branch Office-1",
       city: "Dhaka",
       address: "House-122 (Ground Floor) Infront of Tarek Medical (Prem Bagan) Airport Road, Dhakkin Khan Uttara, Dhaka ",
-      phone: "+8801923871055",
+      phone: "+8801915651053",
     
      
     },
@@ -33,7 +33,7 @@ const OurBranches = () => {
       name: "Branch office-2",
       city: "Dhaka",
       address: "92,Arman Shopping Center Block-c,Shop No:4,5 Ground Floor (Shahid Faruk Road) South Jatrabari,Dhaka-1204",
-      phone: "+880174-811558",
+      phone: "+8801915651053",
    
      
     },

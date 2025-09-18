@@ -51,9 +51,9 @@ const AddProductPage = () => {
   };
 
   const onSubmit =async (data) => {
-    console.log('function trigger2')
+    // console.log('function trigger2')
   const {data:uploadInfo}= await axios.post(`https://gimim-server.vercel.app/products`,data)
-  console.log(uploadInfo)
+  // console.log(uploadInfo)
   if(uploadInfo.insertedId){
     toast.success('Product Uploaded successfully!', {
       className: 'toast-animate toast-pulse',
@@ -139,6 +139,7 @@ const AddProductPage = () => {
             {imagePreview && (
               <div className="mt-4">
                 <img 
+                loading='lazy'
                   src={imagePreview} 
                   alt="Product Preview" 
                   className="w-32 h-32 object-cover rounded-lg"

@@ -20,7 +20,7 @@ const ManageProduct = () => {
             const response = await axios.get('https://gimim-server.vercel.app/products');
             setProducts(response.data);
         } catch (error) {
-            console.error('Error fetching products:', error);
+            // console.error('Error fetching products:', error);
             toast.error('Failed to fetch products');
         } finally {
             setLoading(false);
@@ -79,6 +79,7 @@ const ManageProduct = () => {
                                     <tr key={product._id} className={`hover:bg-orange-50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
                                         <td className="px-6 py-4">
                                             <img 
+                                                 loading='lazy'
                                                 src={product.image} 
                                                 alt={product.productName}
                                                 className="w-16 h-16 rounded-lg object-cover shadow-md"

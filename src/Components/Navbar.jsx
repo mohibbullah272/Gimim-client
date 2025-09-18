@@ -5,14 +5,15 @@ import useCheckAdmin from '@/Shared/useCheckAdmin';
 import { Link, NavLink } from 'react-router-dom';
 import { Home, Paperclip } from 'lucide-react';
 import { FaBoxes, FaHeadset } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 const Navbar = () => {
   const {user,logout}=useContext(AuthContext)
 
-  const [isAdmin]=useCheckAdmin(user)
+  const [isAdmin,adminLoading]=useCheckAdmin()
   const handleLogout=()=>{
     logout()
     .then(res=>{
-      console.log(`user logout `)
+      toast.success('logout successful')
     })
   }
    
@@ -38,7 +39,7 @@ const links=<>
              }
             </ul>
           </div>
-        <Link to={'/'}>  <span className="text-gray-950 font-semibold text-xl">GIMIM Corporation </span></Link>
+        <Link to={'/'}>  <span className="text-gray-950 font-semibold text-xl">GIMIM CORPORATION </span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -53,6 +54,7 @@ const links=<>
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     <img
+                    loading='lazy'
                       alt="user avatar"
                       src={user?user.photoURL:userIcon} />
                   </div>
@@ -61,7 +63,7 @@ const links=<>
                   tabIndex={0}
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                 
-          {isAdmin && <li><Link to={'/dashboard/overview'}>Dashboard</Link></li>}
+          {isAdmin && !adminLoading && <li><Link to={'/dashboard/overview'}>Dashboard</Link></li>}
                   <li><a onClick={handleLogout}> Logout</a></li>
                 </ul>
               </div>:     <Link to={'/login'}><button className="btn glass primary">Login</button></Link>

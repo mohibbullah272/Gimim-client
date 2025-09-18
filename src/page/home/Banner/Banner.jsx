@@ -96,6 +96,8 @@ const [ref,loaded]=useLazyLoadWithSkeleton()
         className="w-full h-full flex items-center justify-center p-4"
       >
         <img 
+        loading='lazy'
+          ref={ref}
           src={products[currentSlide].image} 
           alt={products[currentSlide].title}
           className="max-w-full max-h-full object-contain"

@@ -18,7 +18,7 @@ const OurMembers = () => {
       id: 1,
       name: "Khondoker Liyakat Hossain",
       role: "Chief Executive Officer",
-      image: "https://i.ibb.co/DHxtPK0Q/member1.jpg",
+      image: "https://i.ibb.co.com/67BgD213/member1.jpg",
       contact:"+880191-5651053"
     },
     {
@@ -30,9 +30,16 @@ const OurMembers = () => {
     },
     {
       id: 3,
+      name: "Khandoker Hamayet Hossain (Rony)",
+      role: "Area Branch Manager",
+      image: "https://i.ibb.co.com/JwGQRKqf/member5-removebg-preview.png",
+      contact:"+8801923-871055"
+    },
+    {
+      id: 4,
       name: "MD. Abdul Rahim",
       role: "Factory Incharge",
-      image: "https://i.ibb.co/p61PTczQ/member4.jpg",
+      image: "https://i.ibb.co.com/7ffk9Ly/member4-removebg-preview.png",
       contact:"+880162-5843626"
     },
 
@@ -60,76 +67,42 @@ const OurMembers = () => {
     </motion.div>
 
     {/* Members Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-14">
       {members.map((member, index) => (
         <motion.div
           key={member.id}
-          className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-transparent hover:shadow-xl transition-all duration-300"
-          style={{ 
-            borderTopColor: colors.primary,
-            borderTopWidth: '4px'
-          }}
+          className=" rounded-lg p-4 shadow-xs shadow-indigo-100"
+     
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          whileHover={{ 
-            y: -5,
-            borderColor: colors.accent,
-            borderWidth: '2px'
-          }}
+   
         >
-          {/* Member Image */}
-          <div className="relative overflow-hidden">
-            <motion.img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-64 bg-cover object-cover bg-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            />
-            <div 
-              className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"
-            ></div>
-          </div>
 
-          {/* Member Info */}
-          <div className="p-6">
-            <h3 className="text-xl font-bold mb-2 text-gray-800">
-              {member.name}
-            </h3>
-            <p 
-              className="text-sm font-medium mb-4 uppercase tracking-wide"
-              style={{ color: colors.primary }}
-            >
-              {member.role}
-            </p>
-            <p 
-              className="text-sm font-medium mb-4 flex items-center gap-3  tracking-wide"
-              style={{  }}
-            >
-             <Phone></Phone> {member.contact}
-            </p>
-            
-            {/* Role Badge */}
-            <div 
-              className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
-              style={{ 
-                backgroundColor: `${colors.accent}20`,
-                color: colors.primary
-              }}
-            >
-              Team Member
-            </div>
-          </div>
+  <img
+  loading="lazy"
+  ref={ref}
+    alt={member.name}
+    src={member.image}
+    className="md:h-full  w-full rounded-md object-cover"
+  />
 
-          {/* Hover Effect Overlay */}
-          <motion.div
-            className="absolute bottom-0 left-0 right-0 h-1"
-            style={{ backgroundColor: colors.accent }}
-            initial={{ scaleX: 0 }}
-            whileHover={{ scaleX: 1 }}
-            transition={{ duration: 0.3 }}
-          ></motion.div>
+  <div className="mt-2">
+    <dl>
+      <div>
+        <dd className="text-medium ">{member.name}</dd>
+      </div>
+
+      <div>
+        <dt className="text-sm font-semibold">{member.role}</dt>
+
+        <dd className="text-sm">Contact : {member.contact}</dd>
+      </div>
+    </dl>
+
+  
+  </div>
+
         </motion.div>
       ))}
     </div>

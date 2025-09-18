@@ -8,6 +8,7 @@ const PrivacyPolicy = () => {
         <div className="container mx-auto flex items-center justify-between">
           <h1 className="text-2xl md:text-3xl font-bold">Privacy Policy</h1>
           <img 
+               loading='lazy'
             src={logo}
             alt="Gimim Corporation Logo" 
             className="w-16 h-16 rounded-full"
